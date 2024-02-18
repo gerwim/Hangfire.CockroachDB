@@ -43,9 +43,8 @@ namespace Hangfire.PostgreSql
 
       _logger.Info("Start installing Hangfire SQL objects...");
 
-      // starts with version 3 to keep in check with Hangfire SqlServer, but I couldn't keep up with that idea after all;
-      int version = 3;
-      int previousVersion = 1;
+      int version = 1;
+      int previousVersion = 0;
       do
       {
         try
