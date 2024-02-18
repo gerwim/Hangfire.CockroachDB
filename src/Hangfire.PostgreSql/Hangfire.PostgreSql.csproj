@@ -1,25 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>PostgreSql storage implementation for Hangfire (background job system for ASP.NET and aspnet core applications).</Description>
+    <Description>CockroachDB storage implementation for Hangfire (background job system for ASP.NET and aspnet core applications).</Description>
     <Copyright>Copyright © 2014-2021 Frank Hommers and others</Copyright>
-    <AssemblyTitle>Hangfire PostgreSql Storage</AssemblyTitle>
+    <AssemblyTitle>Hangfire CockroachDB Storage</AssemblyTitle>
     <VersionPrefix>1.9.4</VersionPrefix>
     <Authors>Frank Hommers and others (Burhan Irmikci (barhun), Zachary Sims(zsims), kgamecarter, Stafford Williams (staff0rd), briangweber, Viktor Svyatokha (ahydrax), Christopher Dresel (Dresel), Vytautas Kasparavičius (vytautask), Vincent Vrijburg, David Roth (davidroth), Žygimantas Arūna (azygis).</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Hangfire.PostgreSql</AssemblyName>
+    <AssemblyName>Hangfire.CockroachDB</AssemblyName>
     <OutputType>Library</OutputType>
-    <PackageTags>Hangfire;PostgreSql;Postgres</PackageTags>
-    <PackageId>Hangfire.PostgreSql</PackageId>
-    <PackageReleaseNotes>https://github.com/frankhommers/Hangfire.PostgreSql/releases</PackageReleaseNotes>
-    <PackageProjectUrl>http://hmm.rs/Hangfire.PostgreSql</PackageProjectUrl>
+    <PackageTags>Hangfire;CockroachDB;Postgres</PackageTags>
+    <PackageId>GerwimFeiken.Hangfire.CockroachDB</PackageId>
+    <PackageReleaseNotes>https://github.com/gerwim/Hangfire.CockroachDB/releases</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/gerwim/Hangfire.CockroachDB</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <Version>1.9.4.0</Version>
     <FileVersion>1.9.4.0</FileVersion>
     <AssemblyVersion>1.9.4.0</AssemblyVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <RepositoryUrl>https://github.com/frankhommers/Hangfire.PostgreSql</RepositoryUrl>
+    <RepositoryUrl>https://github.com/gerwim/Hangfire.CockroachDB</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Company>Frank Hommers and others (Burhan Irmikci (barhun), Zachary Sims(zsims), kgamecarter, Stafford Williams (staff0rd), briangweber, Viktor Svyatokha (ahydrax), Christopher Dresel (Dresel), Vytautas Kasparavičius (vytautask), Vincent Vrijburg, David Roth (davidroth), Žygimantas Arūna (azygis).</Company>
     <LangVersion>default</LangVersion>
