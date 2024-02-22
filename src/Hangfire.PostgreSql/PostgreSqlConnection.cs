@@ -423,6 +423,7 @@ namespace Hangfire.PostgreSql
       };
 
       string sql = $@"
+        SET enable_multiple_modifications_of_table = true;
         WITH ""inputvalues"" AS (
           SELECT @Id ""id"", @Data ""data"", NOW() ""lastheartbeat""
         ), ""updatedrows"" AS ( 
