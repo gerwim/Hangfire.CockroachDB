@@ -76,6 +76,12 @@ To run the tests, you'll need a compatible CockroachDB server. You can run one w
 docker run -ti -p 26257:26257 --rm cockroachdb/cockroach:v23.2.4 start-single-node --insecure
 ```
 
+### Releasing
+```
+1. Create a tag
+2. Run `dotnet build -c Release`
+```
+
 ### License
 
 Copyright © 2014-2023 Frank Hommers https://github.com/hangfire-postgres/Hangfire.PostgreSql.
