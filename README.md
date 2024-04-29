@@ -69,6 +69,13 @@ config.UsePostgreSqlStorage(c =>
 );
 ```
 
+
+### Development
+To run the tests, you'll need a compatible CockroachDB server. You can run one with Docker:
+```
+docker run -ti -p 26257:26257 --rm cockroachdb/cockroach:v23.2.4 start-single-node --insecure
+```
+
 ### License
 
 Copyright © 2014-2023 Frank Hommers https://github.com/hangfire-postgres/Hangfire.PostgreSql.
