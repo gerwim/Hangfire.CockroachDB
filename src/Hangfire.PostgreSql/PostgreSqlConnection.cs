@@ -242,6 +242,8 @@ namespace Hangfire.PostgreSql
       }
 
       string sql = $@"
+        SET enable_multiple_modifications_of_table = true;
+
         WITH ""inputvalues"" AS (
           SELECT @JobId ""jobid"", @Name ""name"", @Value ""value""
         ), ""updatedrows"" AS ( 
