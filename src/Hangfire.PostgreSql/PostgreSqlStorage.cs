@@ -44,6 +44,7 @@ namespace Hangfire.PostgreSql
       new(StringComparer.OrdinalIgnoreCase)
       {
         { JobStorageFeatures.JobQueueProperty, true },
+        { JobStorageFeatures.Connection.BatchedGetFirstByLowest, true }
       };
 
     [Obsolete("Will be removed in 2.0, please use the overload with IConnectionFactory argument")]
@@ -101,11 +102,17 @@ namespace Hangfire.PostgreSql
       }
 
       InitializeQueueProviders();
+      if (Options.UseSlidingInvisibilityTimeout)
+      {
+        HeartbeatProcess = new PostgreSqlHeartbeatProcess();
+      }
     }
 
     public PersistentJobQueueProviderCollection QueueProviders { get; internal set; }
 
     internal PostgreSqlStorageOptions Options { get; }
+
+    internal PostgreSqlHeartbeatProcess HeartbeatProcess { get; }
 
     public override IMonitoringApi GetMonitoringApi()
     {
@@ -123,13 +130,19 @@ namespace Hangfire.PostgreSql
     {
       yield return new ExpirationManager(this);
       yield return new CountersAggregator(this, Options.CountersAggregateInterval);
+      if (Options.UseSlidingInvisibilityTimeout)
+      {
+        // This is only used to update the sliding invisibility timeouts, so if not enabled then do not use it
+        yield return HeartbeatProcess;
+      }
     }
 
     public override void WriteOptionsToLog(ILog logger)
     {
-      logger.Info("Using the following options for SQL Server job storage:");
+      logger.Info("Using the following options for PostgreSQL job storage:");
       logger.InfoFormat("    Queue poll interval: {0}.", Options.QueuePollInterval);
       logger.InfoFormat("    Invisibility timeout: {0}.", Options.InvisibilityTimeout);
+      logger.InfoFormat("    Use sliding invisibility timeout: {0}.", Options.UseSlidingInvisibilityTimeout);
     }
 
     public override string ToString()
