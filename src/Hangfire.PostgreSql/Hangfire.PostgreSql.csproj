@@ -4,7 +4,7 @@
     <Description>CockroachDB storage implementation for Hangfire (background job system for ASP.NET and aspnet core applications).</Description>
     <Copyright>Copyright © 2014-2024 Frank Hommers and others</Copyright>
     <AssemblyTitle>Hangfire CockroachDB Storage</AssemblyTitle>
-    <VersionPrefix>1.9.4</VersionPrefix>
+    <VersionPrefix>0.3.0</VersionPrefix>
     <Authors>Frank Hommers, Vytautas Kasparavičius, Žygimantas Arūna</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Hangfire.CockroachDB</AssemblyName>
@@ -14,9 +14,9 @@
     <PackageReleaseNotes>https://github.com/gerwim/Hangfire.CockroachDB/releases</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/gerwim/Hangfire.CockroachDB</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <Version>1.9.4.0</Version>
-    <FileVersion>1.9.4.0</FileVersion>
-    <AssemblyVersion>1.9.4.0</AssemblyVersion>
+    <Version>0.3.0.0</Version>
+    <FileVersion>0.3.0.0</FileVersion>
+    <AssemblyVersion>0.3.0.0</AssemblyVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <RepositoryUrl>https://github.com/gerwim/Hangfire.CockroachDB</RepositoryUrl>
