@@ -26,8 +26,7 @@ app.UseHangfireDashboard();
 First, NuGet package needs installation.
 
 - Hangfire.AspNetCore
-- Hangfire.PostgreSql (Uses Npgsql 6)
-- Hangfire.PostgreSql.Npgsql5 (Uses Npgsql 5)
+- Hangfire.CockroachDB
 
 Historically both packages were functionally the same up until the package version 1.9.11, the only difference was the underlying Npgsql dependency version. Afterwards, the support for Npgsql v5 has been dropped and now minimum required version is 6.0.0.
 
@@ -55,7 +54,7 @@ If you encounter any issues/bugs or have idea of a feature regarding Hangfire.Po
 SSL support can be enabled for Hangfire.PostgreSql library using the following mechanism:
 
 ```csharp
-config.UsePostgreSqlStorage(c =>
+config.UseCockroachDbStorage(c =>
     c.UseNpgsqlConnection(
         Configuration.GetConnectionString("HangfireConnection"), // connection string,
         connection => // connection setup - gets called after instantiating the connection and before any calls to DB are made
@@ -78,7 +77,8 @@ docker run -ti -p 26257:26257 --rm cockroachdb/cockroach:v23.2.4 start-single-no
 
 ### Releasing
 ```
-1. Create a tag
+1. Update Version information (in .csproj)
+2. Create a tag
 2. Run `dotnet build -c Release`
 ```
 
