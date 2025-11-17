@@ -166,7 +166,7 @@ namespace Hangfire.PostgreSql
         builder.Append("Schema: ");
         builder.Append(Options.SchemaName);
 
-        return builder.Length != 0 ? $"PostgreSQL Server: {builder}" : canNotParseMessage;
+        return builder.Length != 0 ? $"CockroachDB Server: {builder}" : canNotParseMessage;
       }
       catch (Exception)
       {
