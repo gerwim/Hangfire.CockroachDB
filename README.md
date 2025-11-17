@@ -1,25 +1,10 @@
-# Hangfire.PostgreSql
+# Hangfire.CockroachDB
 
-[![Build status](https://github.com/hangfire-postgres/Hangfire.PostgreSql/actions/workflows/pack.yml/badge.svg)](https://github.com/hangfire-postgres/Hangfire.PostgreSql/actions/workflows/pack.yml) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/hangfire-postgres/Hangfire.PostgreSql?label=Release)](https://github.com/hangfire-postgres/Hangfire.PostgreSql/releases/latest) [![Nuget](https://img.shields.io/nuget/v/Hangfire.PostgreSql?label=NuGet)](https://www.nuget.org/packages/Hangfire.PostgreSql)
-
-This is an plugin to the Hangfire to enable PostgreSQL as a storage system.
+This is an plugin to the Hangfire to enable CockroachDB as a storage system.
 Read about hangfire here: https://github.com/HangfireIO/Hangfire#overview
 and here: http://hangfire.io/
 
 ## Instructions
-
-### For .NET
-
-Install Hangfire, see https://github.com/HangfireIO/Hangfire#installation
-
-Download all files from this repository, add the Hangfire.PostgreSql.csproj to your solution.
-Reference it in your project, and you are ready to go by using:
-
-```csharp
-app.UseHangfireServer(new BackgroundJobServerOptions(),
-  new PostgreSqlStorage("<connection string or its name>"));
-app.UseHangfireDashboard();
-```
 
 ### For ASP.NET Core
 
@@ -34,7 +19,7 @@ In `Startup.cs` _ConfigureServices(IServiceCollection services)_ method add the 
 
 ```csharp
 services.AddHangfire(config =>
-    config.UsePostgreSqlStorage(c =>
+    config.UseCockroachDbStorage(c =>
         c.UseNpgsqlConnection(Configuration.GetConnectionString("HangfireConnection"))));
 ```
 
@@ -47,11 +32,11 @@ app.UseHangfireDashboard();
 
 And... That's it. You are ready to go.
 
-If you encounter any issues/bugs or have idea of a feature regarding Hangfire.Postgresql, [create us an issue](https://github.com/hangfire-postgres/Hangfire.PostgreSql/issues/new). Thanks!
+If you encounter any issues/bugs or have idea of a feature regarding Hangfire.CockroachDB, [create us an issue](https://github.com/gerwim/Hangfire.CockroachDb/issues/new). Thanks!
 
 ### Enabling SSL support
 
-SSL support can be enabled for Hangfire.PostgreSql library using the following mechanism:
+SSL support can be enabled for Hangfire.CockroachDB library using the following mechanism:
 
 ```csharp
 config.UseCockroachDbStorage(c =>
@@ -92,10 +77,11 @@ Frank Hommers (frankhommers), Vytautas Kasparavičius (vytautask), Žygimantas A
 Contributors:
 Andrew Armstrong (Plasma), Burhan Irmikci (barhun), Zachary Sims(zsims), kgamecarter, Stafford Williams (staff0rd), briangweber, Viktor Svyatokha (ahydrax), Christopher Dresel (Dresel), Vincent Vrijburg, David Roth (davidroth) and Ivan Tiniakov (Tinyakov).
 
-Hangfire.PostgreSql is an Open Source project licensed under the terms of the LGPLv3 license. Please see http://www.gnu.org/licenses/lgpl-3.0.html for license text or COPYING.LESSER file distributed with the source code.
+Hangfire.CockroachDB is an Open Source project licensed under the terms of the LGPLv3 license. Please see http://www.gnu.org/licenses/lgpl-3.0.html for license text or COPYING.LESSER file distributed with the source code.
 
 This work is based on the work of Sergey Odinokov, author of Hangfire. <http://hangfire.io/>
 
 ### Related Projects
 
+- [Hangfire.PostgreSql](https://github.com/hangfire-postgres/Hangfire.PostgreSql)
 - [Hangfire.Core](https://github.com/HangfireIO/Hangfire)
